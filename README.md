@@ -31,18 +31,6 @@ defmodule TimeTracker do
   end
 end
 ```
-We might also create another module to run this server that might look something like this.
-
-```elixir
-defmodule IexBlocked do
-  def start(_type, _args) do
-    TimeTracker.start_link()
-    TimeTracker.run()
-
-    {:ok, self()}
-  end
-end
-```
 
 We then decide that we would really like this server to be initialized with some sort of message that can be recovered and displayed later while the server is still running. We modify the start_link function to take a parameter.
 ```elixir
