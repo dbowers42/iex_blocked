@@ -1,3 +1,0 @@
-defmodule IexBlocked do
-
-end

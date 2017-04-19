@@ -15,22 +15,12 @@ defmodule TimeTracker do
     run() # infinite recursion!
   end
 
-  # Gets the message the GenServer was initialized with
+  # Displays the message the GenServer was initialized with
   def message do
-     GenServer.call(__MODULE__, :message)
-  end
-
-  def done do
-    IO.puts "calling done"
-    GenServer.cast(__MODULE__, :done)
+     IO.puts GenServer.call(__MODULE__, :message)
   end
 
   def handle_call(:message, _from, state) do
     {:reply, state.message, state}
-  end
-
-  def handle_cast(:done, state) do
-      IO.puts "Stop tracking"
-     {:noreply, state}
   end
 end
