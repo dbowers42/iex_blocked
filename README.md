@@ -77,15 +77,9 @@ end
 
 The idea behind these changes is that we can start this server in an IEX session and interact with it while it is still running. For example:
 
-```iex -S mix```
+when we run ```iex -S mix``` from the command line
 
-gives us:
-
-```elixir
-iex(1)>
-```
-
-We then try:
+then we try:
 
 ```elixir
   iex(1)> TimeTracker.start_link("Hello World")
@@ -93,7 +87,7 @@ We then try:
   iex(2)>TimeTracker.run()
 ```
 
-Which successfully starts the server. The current time starts being displayed every 5 seconds, but we can no longer interact with the terminal. This illustrates the problem we are trying to address.
+The server successfully starts. The current time starts being displayed every 5 seconds, but we can no longer interact with the terminal. This illustrates the problem we are trying to address.
 
 It turns out that when you run an application that involves long running processes in this fashion, the application takes over the terminal that IEX is running in. At this point you can no longer type in IEX or interact with it effectively. You are forced to hit ```ctrl+c``` twice to exit.
 
