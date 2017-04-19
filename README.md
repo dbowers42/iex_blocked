@@ -110,7 +110,7 @@ and then in a separate terminal window/pane
 
 ```iex --name fred@127.0.0.1 -S mix```
 
-We now have 2 independent IEX sessions that each have their own node. We can connect like this.
+We now have 2 independent IEX sessions that each have their own node. We can connect them like this.
 
 ```elixir
    iex(fred@127.0.0.1)> Node.connect(:"bob@127.0.0.1")
@@ -138,7 +138,7 @@ Now we can do this
    #PID<13640.117.0>
    iex(fred@127.0.0.1)> Node.spawn(:"bob@127.0.0.1", TimeTracker, :run, [])
 ```
-You will notice that the server now starts outputting the current time every 5 seconds. The server is running in its own process. It is no longer blocking iex!
+You will notice that the server now starts outputting the current time every 5 seconds. The server is running in its own process. It is no longer blocking IEX!
 
 Now we can try
 
@@ -147,7 +147,7 @@ Now we can try
   Hello World  
 ```
 
-Every 5 seconds the server will continue outputting the current time, but it will also respond when we request it to display the message the server was initialized with.
+Every 5 seconds the server will continue outputting the current time, but it will also respond when we request it to display the message the server was initialized with. We have solved the issue!
 
 ## Installation
 
